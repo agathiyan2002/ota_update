@@ -1,0 +1,22 @@
+name: OTA Code Update
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-laptops:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Copy updated code to laptops
+        run: |
+          # Assuming your laptops are SSH-accessible
+          # Replace USERNAME, HOSTNAME, and PATH_TO_CODE accordingly
+          scp -r ota_update agathiyan2002@alan-Lenovo-E41-25:/home/alan/Documents/python/ota_update
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
