@@ -17,6 +17,6 @@ jobs:
         run: |
           # Assuming your laptops are SSH-accessible
           # Replace USERNAME, HOSTNAME, and PATH_TO_CODE accordingly
-          scp -r ota_update agathiyan2002@192.168.1.7:/home/alan/Documents/python/ota_update
+          scp -r ota_update agathiyan2002@0.0.0.0:/home/alan/Documents/python/ota_update
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
